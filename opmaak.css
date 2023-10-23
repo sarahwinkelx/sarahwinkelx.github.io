@@ -29,3 +29,44 @@ body {margin:0;}
   margin-top: 30px;
   height: 1500px; /* Used in this example to enable scrolling */
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #777;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Homepage</a></li>
+  <li><a href="#Kleurmodellen">Kleurmodellen</a></li>
+  <li><a href="#Binair stelsel">Binair stelsel</a></li>
+  <li><a href="#Bestandsformaten">Bestandsformaten</a></li>
+</ul>
+
+</body>
+</html>
