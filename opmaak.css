@@ -30,10 +30,7 @@ body {margin:0;}
   height: 1500px; /* Used in this example to enable scrolling */
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -57,16 +54,3 @@ li a {
 li a:hover {
   background-color: #111;
 }
-</style>
-</head>
-<body>
-
-<ul>
-  <li><a class="active" href="#home">Homepage</a></li>
-  <li><a href="#Kleurmodellen">Kleurmodellen</a></li>
-  <li><a href="#Binair stelsel">Binair stelsel</a></li>
-  <li><a href="#Bestandsformaten">Bestandsformaten</a></li>
-</ul>
-
-</body>
-</html>
