@@ -1,56 +1,45 @@
-
-body {margin:0;}
-
-.navbar {
-  overflow: hidden;
-  background-color: #c9e4ba;
-  position: fixed;
-  top: 0;
-  width: 100%;
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  background-color: pink;
 }
 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+div.first {
+  opacity: 0.1;
 }
 
-.navbar a:hover {
-  background: #ddd;
-  color: black;
+div.second {
+  opacity: 0.3;
 }
 
-.main {
-  padding: 16px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
+div.third {
+  opacity: 0.6;
 }
+</style>
+</head>
+<body>
 
+<h1>Transparent Boxes</h1>
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #777;
-}
+<p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
 
-li {
-  float: left;
-}
+<div class="first">
+  <h1>opacity 0.1</h1>
+</div>
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+<div class="second">
+  <h1>opacity 0.3</h1>
+</div>
 
-li a:hover {
-  background-color: #111;
-}
+<div class="third">
+  <h1>opacity 0.6</h1>
+</div>
+
+<div>
+  <h1>opacity 1 (default)</h1>
+</div>
+
+</body>
+</html>
