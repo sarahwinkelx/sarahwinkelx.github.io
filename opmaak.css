@@ -1,17 +1,24 @@
 body {
   background-color: rgb(246, 237, 218);
 }
-
-div.first {
-  opacity: 0.1;
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-div.second {
-  opacity: 0.3;
+.navbar a:hover {
+  background: #ddd;
+  color: black;
 }
 
-div.third {
-  opacity: 0.6;
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
 }
-
 
