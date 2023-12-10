@@ -4,7 +4,8 @@ body {
 .navbar a {
   float: left;
   display: block;
-  color: #2c2404;
+  color: #fcf4d5;
+  background: #09344e;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -12,7 +13,7 @@ body {
 }
 
 .navbar a:hover {
-  background: #ddd;
+  background: #eaf7ff;
   color: black;
 }
 
