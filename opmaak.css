@@ -1,11 +1,19 @@
 body {
   background-color: rgb(236, 240, 251);
 }
-.navbar a {
+
+.navbar { 
+  overflow: hidden;
+  background-color: #09344e; /*kleur menu*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+  
+  .navbar a {
   float: left;
   display: block;
   color: #fcf4d5;
-  background: #09344e;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
