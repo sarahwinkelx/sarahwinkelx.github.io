@@ -1,0 +1,262 @@
+<!DOCTYPE html> <!-- dit is de homepage van mijn site-->
+<html> <!-- dit is het html-element -->
+
+<head>
+  <title>Homepage - SWX</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="opmaak.css">
+</head>
+
+<body>
+<script>
+
+function main() {
+    // Hier moet de gebruiker het aantal getallen kiezen om mee te gaan rekenen. De interger zorgt ervoor dat de gebruiker dan de hoeveelheid kan invullen.
+    window.alert("Hoi, welkom bij mijn complexe rekenmachine. Met hoeveel getallen zou u willen gaan rekenen? Bij modulen mogen er alleen twee getallen gebruikt worden.");
+    var aantalcijfers;
+
+    aantalcijfers = Number(window.prompt('Enter a value for aantalcijfers'));
+
+    // Ik weet nu met hoeveel cijfers de gebruiker wilt rekenen en maak met die hoeveelheid een array aan. Dit doe ik om het ingevulde getal in Aantalcijfers in te vullen bij grote Array. Hierdoor wordt de array evengroot als de ingevulde waarde van de gebruiker
+    var cijfer = []; // createArray(aantalcijfers);
+    var teller;
+
+    // Er wordt nu aan de gebruiker gevraagd of hij wilt rekenen met komma getallen. De gebruiker kan dan: ja of nee invullen. Hoofdletters zijn geen probleem, dus Ja en ja begrijpt het programma.
+    window.alert("Wilt u getallen gebruiken met een komma? Antwoord met: ja of nee.");
+    var antwoord;
+
+    // De gebruiker kan nu invullen: ja of nee (hoofdletters maken niet uit. Door de stringAntwoord.
+    antwoord = window.prompt('Enter a value for antwoord');
+    if (antwoord == "ja" || antwoord == "Ja") {
+        window.alert("Bij gebruik van komma getallen, gebruik een punt (.). Dus als voorbeeld: 2.4 en niet 2,4.");
+    }
+
+    // Bij de For-loop wordt elke keer +1 gedaan bij de teller. Dit blijft de for loop doen totdat de hoeveelheid gewilde getallen is bereikt. Omdat de for loop begint bij 0 en de gebruiker is begonnen met tellen vanaf 1, is de eindwaarde het Aantalcijfers -1.
+    for (teller = 0; teller <= aantalcijfers - 1; teller++) {
+
+        // Hier wordt gevraagd om een getal in te voeren. Doordat er Teller+1 staat kan de gebruiker de hoeveelheid cijfers invullen dat hij zelf wilt.
+        window.alert("Voer nu het getal " + (teller + 1) + " in.");
+
+        // De gebruiker vult de array cijfer in bij de plek wat de Teller is hierdoor wordt elke plek in de array ingevuld.
+        cijfer[teller] = Number(window.prompt('Enter a value for cijfer[teller]'));
+    }
+
+    // De string zorgt ervoor dat de gebruiker kan invullen wat er met de ingevulde getallen kan gebeuren dus optellen, aftrekken, vermenigvuldigen, delen, kwadrateren, worteltrekken of modules
+    var actie;
+
+    window.alert("U kunt kiezen wat er gebeurt met de getallen, dit zijn de keuzes: optellen, aftrekken, vermenigvuldigen, delen, kwadrateren, worteltrekken of modules?");
+    window.alert("Bij optellen, aftrekken, delen en vermenigvuldigen wordt de actie uitgevoerd met alle getallen. En bij kwadrateren en worteltrekken wordt elk getal los gekwadrateerd of wortelgetrokken.");
+
+    // De actie wordt nu ingevoerd, ik maak een Real aan, zodat komma getallen bij de berekening straks mogelijk zijn. Ik maak X aan zodat ik een plek heb waar ik mee kan rekenen.
+    actie = window.prompt('Enter a value for actie');
+    var x;
+
+    // Ik geef X het getal wat als eerste ingevuld is, in de Array, zodat ik nu een getal heb waar ik mee kan rekenen
+    x = cijfer[0];
+
+    // Als de gebruiker de getallen wilde optellen, heeft de gebruiken optellen ingevoerd dit kon met en zonder hoofdletter. Op dit punt gaat het programma voor optellen naar rechts. Alle andere acties gaan naar links.
+    if (actie == "optellen" || actie == "Optellen" || actie == "vermenigvuldigen" || actie == "Vermenigvuldigen" || actie == "aftrekken" || actie == "Aftrekken" || actie == "delen" || actie == "Delen" || actie == "kwadrateren" || actie == "Kwadrateren" || actie == "worteltrekken" || actie == "Worteltrekken" || actie == "modules" || actie == "Modules") {
+    } else {
+        window.alert("Excuses! We snappen helaas niet wat u bedoelt... Zou u het opnieuw kunnen typen? Let op spelfouten, hoofdletters maken niet uit.");
+        actie = window.prompt('Enter a value for actie');
+    }
+    if (actie == "optellen" || actie == "Optellen") {
+
+        // Ik maak nu een Real variable aan, zodat ik de optelsom kan gaan maken, waar komma getallen ook mogelijk zijn.
+        var optelsom;
+
+        // Nu heb ik een For-loop aan waarbij het eerste getal in het Array Cijfers zal worden opgetelt bij het tweede getal in de Array. Daarna zet ik dat antwoord weer onder x, zodat ik het volgende getal met Cijfer[Teller] erbij op kan tellen. Omdat x = Cijfer[0], begint deze for-loop bij Cijfer[1].
+        for (teller = 1; teller <= aantalcijfers - 1; teller++) {
+            optelsom = x + cijfer[teller];
+            x = optelsom;
+        }
+
+        // De gebruiker krijgt nu het antwoord van de optelsom.
+        window.alert("Het antwoord van de optelsom is " + x);
+    } else {
+
+        // Als de gebruiker de getallen wilde aftrekken, heeft de gebruiken aftrekken ingevoerd. Op dit punt gaat het programma voor aftrekken naar rechts. Alle overige acties gaan naar links.
+        if (actie == "aftrekken" || actie == "Aftrekken") {
+
+            // Er is nu een real variabele aangemaakt, waardoor de som gemaakt kan worden, hierdoor zijn ook komma getallen mogelijk.
+            var aftreksom;
+
+            // Ik maak nu een For-loop aan waarbij het eerste getal in het Array Cijfers wordt afgetrokken bij het tweede getal in de Array. Daarna zet ik dat antwoord weer onder x, zodat ik het volgende getal met Cijfer[Teller] ervan aftrekken. Omdat x = Cijfer[0], begint deze for-loop bij Cijfer[1].
+            for (teller = 1; teller <= aantalcijfers - 1; teller++) {
+                aftreksom = x - cijfer[teller];
+                x = aftreksom;
+            }
+
+            // Als alle getallen van elkaar zijn afgetrokken, wordt het in deze output aan de gebruiker gegeven.
+            window.alert("Het antwoord van de aftreksom is " + x);
+        } else {
+
+            // Als de gebruiker de getallen wilde vermenigvuldigen, heeft de gebruiker vermenigvuldigen ingevoerd. Op dit punt gaat het programma voor vermenigvuldige naar rechts. Alle overige acties gaan naar links.
+            if (actie == "vermenigvuldigen" || actie == "Vermenigvuldigen") {
+
+                // Ik maak nu een Real variable aan, zodat ik de vermenigvuldeging kan gaan maken, waar komma getallen ook mogelijk zijn.
+                var keersom;
+
+                // Nu heb ik een For-loop waar het eertse getal van de Array-cijfers zullen worden vermenigvuldigd met het tweede getal van de Array. Voor dit getal heb ik een "x" gezet, zodat dit getal weer keer vermenigvuldigd kan worden met Cijfer[Teller]. Door x=cijfer[0], dat begint bij een for-loop van Cijfer[1].
+                for (teller = 1; teller <= aantalcijfers - 1; teller++) {
+                    keersom = x * cijfer[teller];
+                    x = keersom;
+                }
+
+                // Als alle getallen met elkaar zijn vermenigvuldigd, wordt het in deze output aan de gebruiker gegeven.
+                window.alert("Het antwoord van uw vermenigvuldiging is " + x);
+            } else {
+
+                // Als de gebruiker wilde gaan delen, heeft de gebruiker delen/Delen ingevuld. Vanaf nu zullen alle andere acties naar rechts gaan.
+                if (actie == "delen" || actie == "Delen") {
+
+                    // Ik maak nu een Real variable aan, zodat ik de deelsom kan gaan maken, waar komma getallen ook mogelijk zijn.
+                    var deelsom;
+
+                    // Ik maak nu een For-loop aan waarbij alle getallen met elkaar gedeelt gaan worden. Doordat je wiskundig correct niet met het getal 0 kan delen, wordt in elke loop gekeken ofdat een ingevuld getal 0 is.
+                    for (teller = 0; teller <= aantalcijfers - 1; teller++) {
+
+                        // Hier wordt een if statement gebruikt om te kijken ofdat een ingevuld getal in de Array Cijfers een 0 is. Als een ingevuld getal 0 is gaat het programma naar rechts. Als het getal geen 0 is gaat het programma naar links.
+                        if (cijfer[teller] == 0) {
+
+                            // Het is niet mogelijk om te delen met 0. Dus als dit wel gebeurt, geeft de rekenmachine aan dat dit niet kan.
+                            window.alert("Er is een MathError, want delen door 0 is wiskundig niet mogelijk!");
+
+                            // X krijgt de waarde 0, waardoor het eindantwoord uiteindelijk ook 0 blijft. Omdat x gebruikt wordt in de formule voor de deelsom.
+                            x = -0;
+
+                            // Het antwoord op de Deelsom wordt dan 0.
+                        } else {
+
+                            // Bijvoorbeeld: de ingevulde getallen bevatten geen getal 0, dan wordt er bij Teller=0 gekeken waar we in de loop zitten zodat de formule correct gebruikt wordt.
+                            if (teller == 0) {
+
+                                // Stel de Teller is 0, dus beginnen we met de loop, slaan we de formule over, omdat we nu dan een startwaarde hebben.
+                            } else {
+
+                                // Door de startwaarde kunnen we de formule gaan gebruiken om de getallen te delen. Bijvoorbeeld als we niet beginnen bij de array, want dan kom je hier uit.
+                                deelsom = x / cijfer[teller];
+
+                                // Het antwoord uit de formule wordt weer in x gezet, zodat de volgende keer in het passeren van de for loop dezelfde formule gebruikt kan worden.
+                                x = deelsom;
+                            }
+                        }
+                    }
+
+                    // Als alle getallen gedeelt zijn met elkaar, wordt deze output het antwoord gegeven aan de gebruiker.
+                    window.alert("Het antwoord op je Deelsom is " + x);
+                } else {
+
+                    // Als de gebruiken graag de getallen wilde kwadrateren, heeft de gebruiken kwadrateren ingevoerd. Op dit punt gaat het programma voor kwadrateren naar rechts en worteltrekken gaat naar links.
+                    if (actie == "kwadrateren" || actie == "Kwadrateren") {
+
+                        // Ik maak een Real variable aan, zodat komma getallen ook gekwadrateert kunnen worden.
+                        var kwadraat;
+
+                        // Bij kwadrateren heeft de gebruiker 2 optie's: De standaard kwadraat van een cijfer nemen dus tot de macht 2, oftewel ^2. Of de gebruiker kan zelf een macht invullen, oftewel ^?.
+                        window.alert("U heeft kwadrateren gekozen, wilt u zelfstandig een machtsfuntie invoeren of wilt u een standaard machtsfuntie 2 hebben? ");
+                        window.alert("Typ nu zelfstandig of standaard.");
+                        actie = window.prompt('Enter a value for actie');
+
+                        // Als de gebruiker kiest voor de standaard kwadraat, gaat het programma naar rechts. Kiest de gebruiker er zelf voor om een macht in te vullen gaat het programma naar links.
+                        if (actie == "standaard") {
+
+                            // Hier wordt een For-loop aangemaakt zodat elk getal in het Array Cijfers los gekwadrateert wordt en het antwoord gegeven wordt aan de gebruiker.
+                            for (teller = 0; teller <= aantalcijfers - 1; teller++) {
+
+                                // Om van het ingevoerde getal een kwadraat te maken, selecteer ik hier welk getal, met behulp van de Teller, gekwadrateerd moet worden. De kwadratie is ^2.
+                                kwadraat = Math.pow(cijfer[teller], 2);
+
+                                // Doordat de Antwoorden van de verschillende getallen los aan de gebruiker gegeven worden, kan in elke loop de variable "Kwadraat" overscheven worden, omdat direct het antwoord aan de gebruiker wordt gegeven.
+                                window.alert("Het kwadraat van cijfer " + (teller + 1) + " = " + kwadraat);
+                            }
+                        } else {
+
+                            // De gebruiker wilt zelf de macht invullen. Hier wordt met een output gevraagd naar welke macht de gebruiker wilt invoeren en kan hem invoeren in de variable Macht.
+                            window.alert("Welke macht wilt u de getallen geven?");
+                            var macht;
+
+                            macht = Number(window.prompt('Enter a value for macht'));
+
+                            // Hier wordt een for-loop aangemaakt, zodat elk ingevulde cijfer met de ingevulde machtsfunctie wordt berekent.
+                            for (teller = 0; teller <= aantalcijfers - 1; teller++) {
+
+                                // Om het getal uit de Array cijfers te selecteren om met de macht herrekent te worden, gebruik ik Cijfer[teller]. Daarna gebruik ik ^Macht om het de gewilde macht te geven.
+                                kwadraat = Math.pow(cijfer[teller], macht);
+
+                                // Met deze uitvoer wordt het ingevulde cijfer genoemd en daarna ook de berekende macht.
+                                window.alert("Het " + macht + " macht van cijfer " + (teller + 1) + " =" + kwadraat);
+                            }
+                        }
+                    } else {
+                        if (actie == "worteltrekken" || actie == "Worteltrekken") {
+
+                            // Ik maak een Real variable aan, zodat komma getallen ook wortel getrokken kunnen worden.
+                            var wortel;
+
+                            // Hier wordt een For-loop aangemaakt, zodat elk ingevulde cijfer los kan worden herrekent door worteltrekken.
+                            for (teller = 0; teller <= aantalcijfers - 1; teller++) {
+
+                                // Hier wordt een if statement gebruikt om te kijken ofdat een ingevuld getal in de Array Cijfers een negatief getal is. Als een ingevuld getal negatief is gaat het programma naar rechts. Als het geen negatief getal is gaat het programma naar links.
+                                if (cijfer[teller] < 0) {
+                                    window.alert("MathError, Het is niet mogelijk om een negatiefgetal worteltetrekken.");
+                                } else {
+
+                                    // Hier wordt een if statement gebruikt om te kijken ofdat een ingevuld getal in de Array Cijfers een 0 is. Als een ingevuld getal 0 is gaat het programma naar rechts. Als het getal geen 0 is gaat het programma naar links.
+                                    if (cijfer[teller] == 0) {
+
+                                        // Worteltrekken van 0 heeft geen zin, want antwoord is 0
+                                        window.alert("Error, een wortel trekken van 0 heeft geen zin, want antwoord is 0");
+                                    } else {
+
+                                        // Elk positieve getal komt hier terecht in programma. Omdat het teken van een wortel niet herkent wordt door flowgorithm, gebruik je de de machtsfuntie ^, omdat ^0,5 gelijk is aan worteltrekken.
+                                        wortel = Math.pow(cijfer[teller], 0.5);
+
+                                        // Het uitgerekende cijfer, wordt meteen aan de gebruiker getoont.
+                                        window.alert("De wortel van cijfer " + (teller + 1) + " = " + wortel);
+                                    }
+                                }
+                            }
+                        } else {
+                            var module;
+
+                            if (aantalcijfers == 2) {
+                                window.alert("Welkom bij modules, hier worden op een na volgse nummers gemoduliseerd. Dus het ingevulde getal 1 wordt gemoduliseerd met getal 2. Daarna getal 3 met 4, ect");
+                                module = x % cijfer[1];
+                            } else {
+                                window.alert("SystemError");
+                                window.alert("U heeft een niet 2 getallen ingevoerd, voer een bij de vraag, met hoeveel getallen wilt u gaan rekenen?, het getal 2 in. Om de cijfers te laten moduleren.");
+                            }
+                            window.alert("De module is " + module);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+window.onload = main;
+</script>
+  
+  <div class="navbar">
+    <a href="index.html">Homepage</a> <!-- link naar homepage -->
+    <a href="binairstelsel.html">Binair stelsel</a>
+    <a href="kleurmodellen.html">Kleurmodellen</a>
+    <a href="Bestandsformaten.html">Bestandsformaten</a>
+    <a href="compressie.html">Compressie</a>
+    <a href="Algemeneinformatie.html">Algemene informatie</a>
+    <a href="Rekenmachine.html">Rekenmachine</a>
+  </div>
+
+  <div class="main">
+
+    <h1>Rekenmachine</h1>
+
+    <p><a href="javascript:window.location.reload();">Nog een keer starten</a>.</p>
+
+  </div>
+
+</body>
+
+</html>
