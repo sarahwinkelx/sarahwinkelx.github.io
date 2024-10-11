@@ -1,55 +1,76 @@
-<!DOCTYPE html> <!-- dit is de homepage van mijn site-->
-<html> <!-- dit is het html-element -->
-
-
+<!DOCTYPE html>
+<html>
 <head>
-   <title>Algemene informatie - SWX</title>
-   <meta charset="utf-8">
-   <link rel="stylesheet" href="opmaak.css">
+<style>
+.dropbtn {
+ background-color:
+ color: white;
+ padding: 16px;
+ font-size: 16px;
+ border: none;
+ cursor: pointer;
+}
+
+
+. Dropdown {
+ position: relative;
+ display: inline-block;
+}
+
+
+.dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #f9f9f9;
+ min-width: 160px;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+}
+
+
+.dropdown-content a {
+ color: black;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+.dropdown:hover .dropdown-content {
+ display: block;
+}
+
+
+.dropdown:hover .dropbtn {
+ background-color: #3e8e41;
+}
+</style>
 </head>
-
-
 <body>
 
 
-   <div class="navbar">
-       <a href="index.html">Homepage</a> <!-- link naar homepage -->
-       <a href="binairstelsel.html">Binair stelsel</a>
-       <a href="kleurmodellen.html">Kleurmodellen</a>
-       <a href="Bestandsformaten.html">Bestandsformaten</a>
-       <a href="compressie.html">Compressie</a>
-       <a href="Algemeneinformatie.html">Algemene informatie</a>
-       <a href="Rekenmachine.html">Rekenmachine</a>
-       <a href="dropdown.html">Dropdown</a>
-   </div>
 
 
-   <div class="main">
-       <h1>Algemene informatie</h1>
 
 
-       <h2>Wat is informatica?</h2>
+<div class="dropdown">
+ <button class="dropbtn">Dropdown</button>
+ <div class="dropdown-content">
+   <a href="index.html">Homepage</a> <!-- link naar homepage -->
+   <a href="binairstelsel.html">Binair stelsel</a>
+   <a href="kleurmodellen.html">Kleurmodellen</a>
+   <a href="Bestandsformaten.html">Bestandsformaten</a>
+   <a href="compressie.html">Compressie</a>
+   <a href="Algemeneinformatie.html">Algemene informatie</a>
+   <a href="Rekenmachine.html">Rekenmachine</a>
+ </div>
+</div>
 
 
-       <p>Informatica, ook wel computerwetenschappen genoemd, is een studie en de wetenschap van de theoretische basis
-           van informatie, digitale informatie bewerking en computationele berekeningen en processen. Het houdt zich
-           bezig met alle onderdelen van van computersystemen en netwerken.</p>
-
-
-       <h2>Invoer en uitvoer</h2>
-
-
-       <p>Invoer en uitvoer is essentieel voor de werking van computers. Het vormt de basis van het
-           informatieverwerkingsproces.</p>
-       <p>Invoer verwijst naar de gegevens die een computersysteem ontvangt. Uitvoer gaat om de resultaten dat een
-           computersysteem genereert en verzendt naar de externe bestemming. Bijvoorbeeld een printer of luidspreker.
-       </p>
-   </div>
 
 
 </body>
-
-
 </html>
-
-
