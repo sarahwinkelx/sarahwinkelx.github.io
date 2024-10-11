@@ -1,81 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-.dropbtn {
- background-color:
- color: white;
- padding: 16px;
- font-size: 16px;
- border: none;
- cursor: pointer;
+.dropdown-submenu {
+  position: relative;
 }
 
-<head>
-   <title>Algemene informatie - SWX</title>
-   <meta charset="utf-8">
-   <link rel="stylesheet" href="opmaak.css">
-</head>
-
-. Dropdown {
- position: relative;
- display: inline-block;
-}
-
-
-.dropdown-content {
- display: none;
- position: absolute;
- background-color: #f9f9f9;
- min-width: 160px;
- box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
- z-index: 1;
-}
-
-
-.dropdown-content a {
- color: black;
- padding: 12px 16px;
- text-decoration: none;
- display: block;
-}
-
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-
-.dropdown:hover .dropdown-content {
- display: block;
-}
-
-
-.dropdown:hover .dropbtn {
- background-color: #3e8e41;
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
 }
 </style>
 </head>
 <body>
-
-
-
-
-
-
-<div class="dropdown">
- <button class="dropbtn">Dropdown</button>
- <div class="dropdown-content">
-   <a href="index.html">Homepage</a> <!-- link naar homepage -->
-   <a href="binairstelsel.html">Binair stelsel</a>
-   <a href="kleurmodellen.html">Kleurmodellen</a>
-   <a href="Bestandsformaten.html">Bestandsformaten</a>
-   <a href="compressie.html">Compressie</a>
-   <a href="Algemeneinformatie.html">Algemene informatie</a>
-   <a href="Rekenmachine.html">Rekenmachine</a>
- </div>
+                                       
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+     <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a tabindex="-1" href="index.html">Homepage</a></li>
+      <li><a tabindex="-1" href="binairstelsel.html">Binair stelsel</a></li>
+      <li><a tabindex="-1" href="#">Kleurmodellen</a></li>
+      <li><a tabindex="-1" href="#">Bestandsmodellen</a></li>
+      <li><a tabindex="-1" href="#">Compressie</a></li>
+      
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">Algemene informatie<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">Wat is informatica</a></li>
+          <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+          <li class="dropdown-submenu">
+          
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
 
-
-
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
 
 </body>
 </html>
